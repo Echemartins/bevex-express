@@ -85,9 +85,11 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { Button } from "../components/ui/button";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const router = useRouter();
 
   return (
     <main className="min-h-screen bg-blue-100 text-[#1a1a1a] font-sans">
@@ -102,7 +104,7 @@ export default function Home() {
           />
         </div>
         <nav className="hidden md:flex gap-6 items-center">
-          <Button onClick={() => window.open("/booking", "_blank")} variant="primary" className="py-3">
+          <Button onClick={() => router.push("/booking")} variant="primary" className="py-3">
             GET FREE CONSULTATION
           </Button>
         </nav>
@@ -135,8 +137,8 @@ export default function Home() {
           </button>
         </div>
         {menuOpen && (
-          <div className="absolute top-full left-0 w-full bg-white shadow-md md:hidden">
-            <Button onClick={() => window.open("/booking", "_blank")} variant="primary" className="w-full  py-4">
+          <div className="absolute top-25 right-1 w-fit md:hidden">
+            <Button onClick={() => router.push("/booking")} variant="primary" className="w-fit  py-4">
               GET FREE CONSULTATION
             </Button>
           </div>
@@ -159,7 +161,7 @@ export default function Home() {
               fines, and get their buildings back to compliance—fast.
             </p>
             <div className="flex gap-4 flex-wrap">
-              <Button onClick={() => window.open("/booking", "_blank")} variant="orange" className="py-3">
+              <Button onClick={() => router.push("/booking")} variant="orange" className="py-3">
                 SCHEDULE FREE CONSULTATION
               </Button>
               <Button variant="outline" className="py-3">
@@ -484,7 +486,7 @@ export default function Home() {
             can resolve your violations quickly and cost-effectively.
           </p>
           <div className="flex flex-col md:flex-row gap-4 mb-4 justify-center items-center">
-            <button onClick={() => window.open("/booking", "_blank")} className="bg-orange-500 text-white font-semibold py-3 px-6 outline-0  rounded-full hover:bg-orange-600 transition">
+            <button onClick={() => router.push("/booking")} className="bg-orange-500 text-white font-semibold py-3 px-6 outline-0  rounded-full hover:bg-orange-600 transition">
               SCHEDULE FREE CONSULTATION
             </button>
             <a

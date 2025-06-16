@@ -85,25 +85,29 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const router = useRouter();
 
   return (
     <main className="min-h-screen bg-blue-100 text-[#1a1a1a] font-sans">
       {/* Header */}
       <header className="flex justify-between items-center px-6 md:px-28 py-2 bg-white shadow-lg sticky top-0 z-50">
         <div className="flex items-center space-x-2">
+            <a href="/">
           <Image
             src="/WhatsApp_Image_2025-04-18_at_13.18.34_c36a8747-removebg-preview-200x200.png.png"
             alt="BevEx Logo"
             width={80}
             height={80}
-          />
+            />
+            </a>
         </div>
         <nav className="hidden md:flex gap-6 items-center">
-          <Button variant="primary" className="py-3">
-            GET FREE CONSULTATION
+          <Button onClick={() => router.push("/")} variant="primary" className="py-3">
+            Home
           </Button>
         </nav>
         <div className="md:hidden">
@@ -135,9 +139,9 @@ export default function Home() {
           </button>
         </div>
         {menuOpen && (
-          <div className="absolute top-full left-0 w-full bg-white shadow-md md:hidden">
+          <div className="absolute top-25 right-1 w-fit md:hidden">
             <Button variant="primary" className="w-full  py-4">
-              GET FREE CONSULTATION
+              Home
             </Button>
           </div>
         )}
