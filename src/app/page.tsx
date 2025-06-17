@@ -81,7 +81,7 @@ export default function Home() {
               NYC landlords and businesses resolve violations, avoid costly
               fines, and get their buildings back to compliance—fast.
             </p>
-            <div className="flex gap-4 flex-wrap mt-16">
+            <div className="flex gap-6 flex-wrap mt-16">
               <Button onClick={() => router.push("/booking")} variant="primary" className="py-5 px-8 text-md hover:cursor-pointer transform hover:scale-105 hover:-translate-y-2 transition-all duration-400">
                 SCHEDULE FREE CONSULTATION
               </Button>
@@ -119,7 +119,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-white text-gray-800 my-15">
+      <section className="bg-white text-gray-950 my-15">
         {/* Our Expert Solutions */}
         <div className="max-w-7xl mx-auto px-4 py-16">
           <h2 className="text-5xl font-semi-bold font-medium text-gray-800 mb-4 text-center">
@@ -180,7 +180,7 @@ export default function Home() {
         {/* The High Cost of NYC Building Violations */}
         <div className="bg-white py-30 px-4">
           <div className="max-w-7xl mx-auto">
-            <h3 className="text-2xl lg:text-4xl font-medium text-gray-700 mb-4 text-center">
+            <h3 className="text-2xl lg:text-4xl font-medium text-gray-95000 mb-4 text-center">
               The High Cost of NYC Building Violations
             </h3>
             <p className="text-gray-600 font-medium mb-15 text-center">
@@ -220,7 +220,7 @@ export default function Home() {
         {/* Our Simple 4-Step Process */}
         <div className="bg-white py-16 px-4">
           <div className="max-w-7xl mx-auto text-center">
-            <h3 className="text-3xl lg:text-5xl font-medium text-gray-900 mb-8">
+            <h3 className="text-3xl lg:text-5xl font-medium text-gray-950 mb-8">
               Our Simple 4-Step Process
             </h3>
             <p className="text-gray-800 font-medium mb-15">
@@ -268,7 +268,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="bg-white text-gray-800">
+      <section className="bg-white text-gray-900">
         {/* Testimonials */}
         <div className="bg-blue-500 text-white py-16 px-4 text-center">
           <h2 className="text-3xl lg:text-5xl font-medium mb-4">What Our Clients Say</h2>
@@ -323,7 +323,7 @@ export default function Home() {
 
         {/* Why Choose Bexexpress */}
         <div className="py-10 mt-10 px-3 text-center">
-          <h3 className="text-3xl lg:text-5xl font-bold text-gray-700 mb-6">
+          <h3 className="text-3xl lg:text-5xl font-bold text-gray-900 mb-6">
             Why Choose Bevex express?
           </h3>
           <p className="text-gray-600 mb-12 text-[18px]">
@@ -407,7 +407,7 @@ export default function Home() {
             can resolve your violations quickly and cost-effectively.
           </p>
           <div className="flex flex-col md:flex-row gap-4 mb-4 justify-center items-center">
-            <button onClick={() => router.push("/booking")} className="bg-white text-blue-600 font-semibold py-4 px-4 md:px-8 outline-0  rounded-full transform hover:-translate-y-2 transition duration-300 hover:cursor-pointer">
+            <button onClick={() => router.push("/booking")} className="bg-white text-blue-600 font-semibold py-4 px-2 md:px-8 outline-0  rounded-full transform hover:-translate-y-2 transition duration-300 hover:cursor-pointer">
               SCHEDULE FREE CONSULTATION
             </button>
             <a
