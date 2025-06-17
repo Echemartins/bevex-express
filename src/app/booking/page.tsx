@@ -86,6 +86,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -96,14 +97,14 @@ export default function Home() {
       {/* Header */}
       <header className="flex justify-between items-center px-6 md:px-28 py-2 bg-white shadow-lg sticky top-0 z-50">
         <div className="flex items-center space-x-2">
-            <a href="/">
+            <Link href="/">
           <Image
             src="/WhatsApp_Image_2025-04-18_at_13.18.34_c36a8747-removebg-preview-200x200.png.png"
             alt="BevEx Logo"
             width={80}
             height={80}
             />
-            </a>
+            </Link>
         </div>
         <nav className="hidden md:flex gap-6 items-center">
           <Button onClick={() => router.push("/")} variant="primary" className="py-3">
@@ -165,7 +166,7 @@ export default function Home() {
             <div>
               <div className="">
                 {/* Bev<span className="text-white">EX</span> */}
-                <img src="/WhatsApp_Image_2025-04-18_at_13.18.34_c36a8747-removebg-preview-200x200.png.png" alt="LOGO" className="h-32 w-32"/>
+                <Image width={120} height={120} src="/WhatsApp_Image_2025-04-18_at_13.18.34_c36a8747-removebg-preview-200x200.png.png" alt="LOGO" className="h-32 w-32"/>
               </div>
               <p className="text-md mt-2 text-gray-300">
                 New York City building violation resolution experts providing

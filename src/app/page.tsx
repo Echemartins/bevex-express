@@ -506,7 +506,7 @@ export default function Home() {
             <div>
               <div className="">
                 {/* Bev<span className="text-white">EX</span> */}
-                <img src="/WhatsApp_Image_2025-04-18_at_13.18.34_c36a8747-removebg-preview-200x200.png.png" alt="LOGO" className="h-32 w-32"/>
+                <Image width={120} height={120} src="/WhatsApp_Image_2025-04-18_at_13.18.34_c36a8747-removebg-preview-200x200.png.png" alt="LOGO"/>
               </div>
               <p className="text-md mt-2 text-gray-300">
                 New York City building violation resolution experts providing
