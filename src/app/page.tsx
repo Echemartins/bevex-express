@@ -414,7 +414,7 @@ export default function Home() {
             {/* Without Bexexpress */}
             <div className=" bg-orange-50 flex flex-col gap-5 rounded-lg p-6 text-left shadow-gray-500 shadow-lg">
               <h4 className="text-3xl font-semibold text-orange-600 mb-4">
-                Without Bevex express
+                Without Bevex Express
               </h4>
               <ul className="list-disc pl-10 space-y-2 text-gray-700 text-[16px]">
                 <li>
@@ -441,7 +441,7 @@ export default function Home() {
             {/* With Bexexpress */}
             <div className= "bg-blue-50 flex flex-col gap-5 rounded-lg p-6 text-left shadow-gray-500 shadow-lg">
               <h4 className="text-3xl font-semibold text-blue-600 mb-4">
-                With Bevex express
+                With Bevex Express
               </h4>
               <ul className="list-disc pl-10 space-y-2 text-gray-700 text-[16px]">
                 <li>
@@ -547,7 +547,7 @@ export default function Home() {
           </div>
 
           <p className="text-center text-gray-500 text-sm mt-10">
-            © 2025 Bevexpress Architectural Services. All Rights Reserved.
+            © 2025 BevexExpress Architectural Services. All Rights Reserved.
           </p>
         </footer>
       </section>
