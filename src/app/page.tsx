@@ -1,110 +1,31 @@
-// 'use client';
-// import React from 'react';
-// import Image from 'next/image';
-// import { Button } from "../components/ui/button";
-
-// export default function Home() {
-//   return (
-//     <main className="min-h-screen bg-white">
-//       {/* Header */}
-//       <header className="flex justify-between items-center px-8 py-4 bg-white shadow-sm sticky top-0 z-50">
-//         <div className="flex items-center space-x-2">
-//           <Image src="/logo.png" alt="BevEx Logo" width={40} height={40} />
-//           <span className="text-2xl font-bold text-[#c43226]">BevEx</span>
-//         </div>
-//         <Button className="bg-purple-700 hover:bg-purple-800 text-white px-6 py-2 rounded-full">
-//           GET FREE CONSULTATION
-//         </Button>
-//       </header>
-
-//       {/* Hero Section */}
-//       <section className="bg-[#efe9ff] px-8 py-16">
-//         <div className="max-w-7xl mx-auto flex flex-col-reverse lg:flex-row items-center gap-12">
-//           {/* Text Block */}
-//           <div className="lg:w-1/2 space-y-6">
-//             <p className="text-sm font-semibold text-purple-700 bg-purple-200 px-4 py-1 rounded-full w-fit">
-//               NYC’s #1 Code Violation Specialists
-//             </p>
-//             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-snug">
-//               Stop Paying Thousands in Fines For NYC Building Code Violations
-//             </h1>
-//             <p className="text-gray-700 text-lg">
-//               With nearly two decades of experience, we’ve helped hundreds of NYC landlords and
-//               businesses resolve violations, avoid costly fines, and get their buildings back to
-//               compliance—fast.
-//             </p>
-//             <div className="flex gap-4 flex-wrap">
-//               <Button className="bg-purple-700 hover:bg-purple-800 text-white px-6 py-3 rounded-full">
-//                 SCHEDULE FREE CONSULTATION
-//               </Button>
-//               <Button
-//                 variant="outline"
-//                 className="border-purple-600 text-purple-700 hover:bg-purple-100 px-6 py-3 rounded-full"
-//               >
-//                 HOW IT WORKS
-//               </Button>
-//             </div>
-//           </div>
-
-//           {/* Image Block */}
-//           <div className="lg:w-1/2 flex justify-center">
-//             <Image
-//               src="/worker.jpg"
-//               alt="Construction Worker"
-//               width={500}
-//               height={400}
-//               className="rounded-xl shadow-lg object-cover"
-//             />
-//           </div>
-//         </div>
-//       </section>
-
-//       {/* Stats Section */}
-//       <section className="bg-purple-700 px-8 py-10 text-white">
-//         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 text-center gap-6">
-//           <div className="bg-purple-800 rounded-2xl p-6 shadow-md">
-//             <p className="text-3xl font-bold">90%</p>
-//             <p className="text-sm mt-1">First Shot Filing Approval Rate</p>
-//           </div>
-//           <div className="bg-purple-800 rounded-2xl p-6 shadow-md">
-//             <p className="text-3xl font-bold">24/7</p>
-//             <p className="text-sm mt-1">Expert Support From Our In-House Team</p>
-//           </div>
-//           <div className="bg-purple-800 rounded-2xl p-6 shadow-md">
-//             <p className="text-3xl font-bold">2000+</p>
-//             <p className="text-sm mt-1">Violations Resolved</p>
-//           </div>
-//         </div>
-//       </section>
-//     </main>
-//   );
-// }
-
 "use client";
 
 import React, { useState } from "react";
 import Image from "next/image";
 import { Button } from "../components/ui/button";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const router = useRouter();
 
   return (
-    <main className="min-h-screen bg-blue-100 text-[#1a1a1a] font-sans">
+    <main className="min-h-screen bg-white text-[#1a1a1a] font-sans">
       {/* Header */}
       <header className="flex justify-between items-center px-6 md:px-28 py-2 bg-white shadow-lg sticky top-0 z-50">
         <div className="flex items-center space-x-2">
-          <Image
-            src="/WhatsApp_Image_2025-04-18_at_13.18.34_c36a8747-removebg-preview-200x200.png.png"
-            alt="BevEx Logo"
-            width={80}
-            height={80}
-          />
+          <Link href="/">
+            <Image
+              src="/WhatsApp_Image_2025-04-18_at_13.18.34_c36a8747-removebg-preview-200x200.png.png"
+              alt="BevEx Logo"
+              width={80}
+              height={80}
+            />
+          </Link>
         </div>
         <nav className="hidden md:flex gap-6 items-center">
-          <Button onClick={() => router.push("/booking")} variant="primary" className="py-3">
+          <Button onClick={() => router.push("/booking")} variant="primary" className="py-3 hover:cursor-pointer transform hover:scale-105 hover:-translate-y-2 transition-all duration-400">
             GET FREE CONSULTATION
           </Button>
         </nav>
@@ -138,7 +59,7 @@ export default function Home() {
         </div>
         {menuOpen && (
           <div className="absolute top-25 right-1 w-fit md:hidden">
-            <Button onClick={() => router.push("/booking")} variant="primary" className="w-fit  py-4">
+            <Button onClick={() => router.push("/booking")} variant="primary" className="w-fit  py-4 hover:cursor-pointer transform hover:scale-105 hover:-translate-y-2 transition-all duration-400">
               GET FREE CONSULTATION
             </Button>
           </div>
@@ -146,25 +67,25 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="bg-[#f0f6ff] px-6 md:px-12 py-24">
+      <section className="bg-[#d9e9ff83] px-6 md:px-12 pt-20 py-36">
         <div className="max-w-7xl mx-auto flex flex-col-reverse lg:flex-row gap-12">
           <div className="lg:w-1/2 space-y-6">
-            <p className="text-sm font-semibold text-blue-500 bg-[#d9e9ff] px-4 py-2 rounded-full w-full">
+            <p className="text-sm font-medium text-blue-500 bg-[#d9e9ff] px-4 py-2 rounded-full w-full">
               NYC’s #1 Code Violation Specialists
             </p>
-            <h1 className="text-3xl md:text-4xl font-semibold text-gray-700 leading-snug">
+            <h1 className="text-3xl md:text-4xl font-semibold text-gray-800 leading-snug">
               Stop Paying Thousands in Fines For NYC Building Code Violations
             </h1>
-            <p className="text-gray-600 text-lg">
+            <p className="text-gray-700 text-lg">
               With nearly two decades of experience, we’ve helped hundreds of
               NYC landlords and businesses resolve violations, avoid costly
               fines, and get their buildings back to compliance—fast.
             </p>
-            <div className="flex gap-4 flex-wrap">
-              <Button onClick={() => router.push("/booking")} variant="orange" className="py-3">
+            <div className="flex gap-4 flex-wrap mt-16">
+              <Button onClick={() => router.push("/booking")} variant="primary" className="py-5 px-8 text-md hover:cursor-pointer transform hover:scale-105 hover:-translate-y-2 transition-all duration-400">
                 SCHEDULE FREE CONSULTATION
               </Button>
-              <Button variant="outline" className="py-3">
+              <Button variant="outline" className="py-1 hover:cursor-pointer">
                 HOW IT WORKS
               </Button>
             </div>
@@ -176,35 +97,35 @@ export default function Home() {
               alt="Construction Worker"
               width={500}
               height={400}
-              className="rounded-xl shadow-lg object-cover"
+              className="rounded-xl shadow-lg w-[90%] h-auto object-cover md:object-contain"
             />
           </div>
         </div>
       </section>
 
       {/* Stats Section */}
-      <section className="bg-blue-100 px-6 md:px-12 py-10 text-white">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 text-center -my-20 bg-blue-600 rounded-2xl">
+      <section className="bg-white px-6 md:px-12 py-10 text-white">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 text-center -my-24 bg-blue-600 rounded-2xl">
           {[
             { value: "90%", label: "First Shot Filing Approval Rate" },
             { value: "24/7", label: "Expert Support From Our In-House Team" },
             { value: "2000+", label: "Violations Resolved" },
           ].map((stat, index) => (
-            <div key={index} className="p-6">
-              <p className="text-3xl font-bold">{stat.value}</p>
-              <p className="text-sm mt-1">{stat.label}</p>
+            <div key={index} className="py-8 px-6 space-y-2">
+              <p className="text-6xl font-semi-bold font-medium">{stat.value}</p>
+              <p className="text-md mt-1">{stat.label}</p>
             </div>
           ))}
         </div>
       </section>
 
-      <section className="bg-blue-100 text-gray-800 my-15">
+      <section className="bg-white text-gray-800 my-15">
         {/* Our Expert Solutions */}
-        <div className="max-w-6xl mx-auto px-4 py-16 text-center">
-          <h2 className="text-3xl font-bold text-blue-600 mb-2">
+        <div className="max-w-7xl mx-auto px-4 py-16">
+          <h2 className="text-5xl font-semi-bold font-medium text-gray-800 mb-4 text-center">
             Our Expert Solutions
           </h2>
-          <p className="text-gray-600 mb-10">
+          <p className="text-gray-600 text-lg mb-16 text-center">
             We provide end-to-end services to resolve your building code
             violations and prevent future issues.
           </p>
@@ -234,20 +155,20 @@ export default function Home() {
             ].map((item, i) => (
               <div
                 key={i}
-                className="bg-blue-50 flex-col rounded shadow-md hover:shadow-lg transition"
+                className="bg-white flex-col rounded shadow-xl shadow-gray-600 transform hover:scale-105 hover:-translate-y-4 transition-all duration-400"
               >
                 <Image
                   src={item.src}
                   alt="service Image"
                   width={500}
                   height={400}
-                  className="rounded-t-sm shadow-lg object-cover"
+                  className="rounded-t-md shadow-lg object-cover"
                 />
-                <div className="p-4 space-y-4">
-                  <h3 className="text-lg font-semibold text-orange-500 mb-2">
+                <div className="p-6 space-y-5">
+                  <h3 className="text-2xl font-medium text-gray-800 mb-6">
                     {item.title}
                   </h3>
-                  <p className="text-sm md:text-lg font-medium text-gray-600">
+                  <p className="text-sm md:text-[17px] text-gray-700 leading-loose">
                     {item.desc}
                   </p>
                 </div>
@@ -257,12 +178,12 @@ export default function Home() {
         </div>
 
         {/* The High Cost of NYC Building Violations */}
-        <div className="bg-orange-50 py-16 px-4">
-          <div className="max-w-5xl mx-auto">
-            <h3 className="text-2xl font-bold text-blue-700 mb-4 text-center">
+        <div className="bg-white py-30 px-4">
+          <div className="max-w-7xl mx-auto">
+            <h3 className="text-2xl lg:text-4xl font-medium text-gray-700 mb-4 text-center">
               The High Cost of NYC Building Violations
             </h3>
-            <p className="text-gray-600 mb-10 text-center">
+            <p className="text-gray-600 font-medium mb-15 text-center">
               Code violations in New York City don’t just mean fines, they can
               lead to serious legal and financial consequences.
             </p>
@@ -284,12 +205,12 @@ export default function Home() {
               ].map((item, i) => (
                 <div
                   key={i}
-                  className="p-6 bg-white rounded-lg shadow-lg"
+                  className="p-6 bg-white rounded-lg shadow-md shadow-gray-600 hover:shadow-3xl transform hover:-translate-y-2 transition-all duration-400"
                 >
-                  <h4 className="text-blue-600 font-semibold text-lg mb-2">
+                  <h4 className="text-gray-950 font-medium text-lg md:text-3xl mb-6">
                     {item.title}
                   </h4>
-                  <p className="text-sm text-gray-500">{item.desc}</p>
+                  <p className="text-sm md:text-[15px] text-gray-600 font-medium leading-loose">{item.desc}</p>
                 </div>
               ))}
             </div>
@@ -298,11 +219,11 @@ export default function Home() {
 
         {/* Our Simple 4-Step Process */}
         <div className="bg-white py-16 px-4">
-          <div className="max-w-5xl mx-auto text-center">
-            <h3 className="text-2xl font-bold text-blue-600 mb-10">
+          <div className="max-w-7xl mx-auto text-center">
+            <h3 className="text-3xl lg:text-5xl font-medium text-gray-900 mb-8">
               Our Simple 4-Step Process
             </h3>
-            <p className="text-gray-600 mb-10">
+            <p className="text-gray-800 font-medium mb-15">
               We make resolving NYC building code violations straightforward and
               stress-free.
             </p>
@@ -332,15 +253,15 @@ export default function Home() {
               ].map((item, i) => (
                 <div
                   key={i}
-                  className="rounded-xl p-6 hover:shadow-lg transition"
+                  className="rounded-xl p-6 hover:shadow-2xl transition"
                 >
-                  <div className="w-16 h-16 mb-4 flex items-center justify-center text-white font-bold rounded-full bg-blue-500 mx-auto">
+                  <div className="w-18 h-18 mb-8 flex items-center justify-center text-white text-2xl font-bold rounded-full bg-blue-500 mx-auto">
                     {item.step}
                   </div>
-                  <h4 className="font-semibold text-2xl text-gray-800 mb-2">
+                  <h4 className="font-medium text-3xl text-gray-900 mb-8">
                     {item.title}
                   </h4>
-                  <p className="text-md text-gray-700 font-semi-bold">{item.desc}</p>
+                  <p className="text-md text-gray-600 font-medium leading-loose">{item.desc}</p>
                 </div>
               ))}
             </div>
@@ -350,8 +271,8 @@ export default function Home() {
       <section className="bg-white text-gray-800">
         {/* Testimonials */}
         <div className="bg-blue-500 text-white py-16 px-4 text-center">
-          <h2 className="text-3xl font-bold mb-2">What Our Clients Say</h2>
-          <p className="mb-10">
+          <h2 className="text-3xl lg:text-5xl font-medium mb-4">What Our Clients Say</h2>
+          <p className="mb-15">
             Join hundreds of satisfied property owners who have saved thousands
             on violations.
           </p>
@@ -359,21 +280,21 @@ export default function Home() {
           <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
-                Image:"/cheerful-guy-enjoying-outdoor-coffee-break-199x300.jpg",
+                Image: "/cheerful-guy-enjoying-outdoor-coffee-break-199x300.jpg",
                 quote:
                   "Bexexpress saved me over $10,000 in potential fines by resolving my DOB violations quickly. Their expertise in navigating NYC’s complex building codes is unmatched.",
                 name: "Michael R.",
                 role: "Commercial Property Owner",
               },
               {
-                 Image:"/young-african-woman-white-suit-using-phone-scaled.jpg",
+                Image: "/young-african-woman-white-suit-using-phone-scaled.jpg",
                 quote:
                   "After receiving multiple violations that threatened to shut down my restaurant, Bexexpress stepped in and resolved everything in weeks. Their team handled all the paperwork and meetings.",
                 name: "Sarah D.",
                 role: "Restaurant Owner",
               },
               {
-                 Image:"/medium-shot-man-wearing-glasses-scaled.jpg.jpg",
+                Image: "/medium-shot-man-wearing-glasses-scaled.jpg.jpg",
                 quote:
                   "As a property manager handling multiple buildings, I rely on Bexexpress to keep us compliant. Their proactive approach has prevented countless violations and saved our company millions.",
                 name: "Daniel T.",
@@ -382,9 +303,9 @@ export default function Home() {
             ].map((item, i) => (
               <div
                 key={i}
-                className="bg-blue-700 text-white p-6 rounded-x text-left shadow-lg"
+                className="bg-blue-500 shadow text-white p-6 rounded-lg text-left "
               >
-                <p className="mb-4 text-lg">“{item.quote}”</p>
+                <p className="mb-4 text-xl leading-10">“{item.quote}”</p>
                 <div className="mt-4 flex items-center gap-2">
                   <div className="w-14 h-14 rounded-full bg-white/30 flex items-center justify-center text-xs font-bold">
                     {/* {item.name[0]} */}
@@ -392,7 +313,7 @@ export default function Home() {
                   </div>
                   <div>
                     <p className="font-semibold text-md">{item.name}</p>
-                    <p className="text-sm opacity-80">{item.role}</p>
+                    <p className="text-sm opacity-80 ">{item.role}</p>
                   </div>
                 </div>
               </div>
@@ -439,7 +360,7 @@ export default function Home() {
             </div>
 
             {/* With Bexexpress */}
-            <div className= "bg-blue-50 flex flex-col gap-5 rounded-lg p-6 text-left shadow-gray-500 shadow-lg">
+            <div className="bg-blue-50 flex flex-col gap-5 rounded-lg p-6 text-left shadow-gray-500 shadow-lg">
               <h4 className="text-3xl font-semibold text-blue-600 mb-4">
                 With Bevex Express
               </h4>
@@ -486,13 +407,13 @@ export default function Home() {
             can resolve your violations quickly and cost-effectively.
           </p>
           <div className="flex flex-col md:flex-row gap-4 mb-4 justify-center items-center">
-            <button onClick={() => router.push("/booking")} className="bg-orange-500 text-white font-semibold py-3 px-4 outline-0  rounded-full hover:bg-orange-600 transition">
+            <button onClick={() => router.push("/booking")} className="bg-white text-blue-600 font-semibold py-4 px-4 md:px-8 outline-0  rounded-full transform hover:-translate-y-2 transition duration-300 hover:cursor-pointer">
               SCHEDULE FREE CONSULTATION
             </button>
             <a
               href="tel:+16464779876"
-              className="bg-blue-700 hover:bg-blue-800 transition py-3 px-6 rounded-full border-[0.1px] border-gray-300 text-white font-semibold"
-              // className="font-semibold text-white text-lg"c
+              className="bg-blue-700 hover:bg-blue-800 transition py-4 px-6 rounded-full border-[0.1px] border-gray-300 text-white font-semibold"
+            // className="font-semibold text-white text-lg"c
             >
               CALL: +1-646-477-9876
             </a>
@@ -506,7 +427,7 @@ export default function Home() {
             <div>
               <div className="">
                 {/* Bev<span className="text-white">EX</span> */}
-                <Image width={120} height={120} src="/WhatsApp_Image_2025-04-18_at_13.18.34_c36a8747-removebg-preview-200x200.png.png" alt="LOGO"/>
+                <Image width={120} height={120} src="/WhatsApp_Image_2025-04-18_at_13.18.34_c36a8747-removebg-preview-200x200.png.png" alt="LOGO" />
               </div>
               <p className="text-md mt-2 text-gray-300">
                 New York City building violation resolution experts providing
@@ -517,7 +438,7 @@ export default function Home() {
             {/* Services */}
             <div className="mt-8 pl-7">
               <h4 className="font-semibold text-2xl  mb-6">Services</h4>
-              <ul className="text-md text-blue-800 space-y-3">
+              <ul className="text-md text-[#597b9c] space-y-3">
                 <li>Code Violation Resolution</li>
                 <li>Architectural Plans</li>
                 <li>Permit Filing</li>

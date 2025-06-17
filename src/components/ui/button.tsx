@@ -28,7 +28,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 export function Button({ className, variant = "primary", ...props }: ButtonProps) {
-  const base = "text-sm font-semibold transition-all duration-200 px-6 py-2 rounded-full";
+  const base = "text-md font-semibold transition-all duration-200 px-6 py-2 rounded-full";
   const variants = {
     primary: "bg-blue-500 text-white hover:bg-blue-800",
     orange: "bg-[#FF6B00] text-white hover:bg-[#e65f00]",
