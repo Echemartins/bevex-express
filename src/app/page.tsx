@@ -486,7 +486,7 @@ export default function Home() {
             can resolve your violations quickly and cost-effectively.
           </p>
           <div className="flex flex-col md:flex-row gap-4 mb-4 justify-center items-center">
-            <button onClick={() => router.push("/booking")} className="bg-orange-500 text-white font-semibold py-3 px-6 outline-0  rounded-full hover:bg-orange-600 transition">
+            <button onClick={() => router.push("/booking")} className="bg-orange-500 text-white font-semibold py-3 px-4 outline-0  rounded-full hover:bg-orange-600 transition">
               SCHEDULE FREE CONSULTATION
             </button>
             <a
