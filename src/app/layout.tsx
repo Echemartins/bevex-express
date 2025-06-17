@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata } from "next"; 
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -21,8 +21,8 @@ const geistMono = Geist_Mono({
   //     icon: "/WhatsApp_Image_2025-04-18_at_13.18.34_c36a8747-removebg-preview-200x200.png.png",
   //   },
   // };
-
-export const metadata = {
+;
+export const metadata: Metadata = {
   title: "BevEX Express | DOB Violation Help",
   description: "We help you convert DOB violation notices into booked calls—fast, easy, and reliable. Get help today with BevEX Express.",
   icons: {
