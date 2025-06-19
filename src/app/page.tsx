@@ -306,7 +306,7 @@ export default function Home() {
               {
                 Image: "/medium-shot-man-wearing-glasses-scaled.jpg.jpg",
                 quote:
-                  "As a property manager handling multiple buildings, I rely on Bevex express to keep us compliant. Their proactive approach has prevented countless violations and saved our company millions.",
+                  "As a property manager handling multiple buildings, I rely on BevEx express to keep us compliant. Their proactive approach has prevented countless violations and saved our company millions.",
                 name: "Daniel T.",
                 role: "Property Management Firm",
               },
