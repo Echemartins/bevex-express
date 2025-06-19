@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-blue-100 text-[#1a1a1a] font-sans">
       {/* Header */}
-      <header className="flex justify-between items-center px-6 md:px-28 py-2 bg-white shadow-lg sticky top-0 z-50">
+      <header className="flex justify-between items-center px-6 md:px-28 py-2 bg-white shadow-xl sticky top-0 z-50">
         <div className="flex items-center space-x-2">
             <Link href="/">
           <Image

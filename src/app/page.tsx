@@ -1,14 +1,23 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Image from "next/image";
 import { Button } from "../components/ui/button";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import {TiTick} from "react-icons/ti";
+import { BsQuestionCircleFill } from "react-icons/bs";
+import { FaDollarSign, FaWallet } from "react-icons/fa";
+import { MdWarning} from "react-icons/md";
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const router = useRouter();
+    const stepRef = useRef<HTMLDivElement>(null);
+
+  const scrollToSteps = () => {
+    stepRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <main className="min-h-screen bg-white text-[#1a1a1a] font-sans">
@@ -70,7 +79,7 @@ export default function Home() {
       <section className="bg-[#d9e9ff83] px-6 md:px-12 pt-20 py-36">
         <div className="max-w-7xl mx-auto flex flex-col-reverse lg:flex-row gap-12">
           <div className="lg:w-1/2 space-y-6">
-            <p className="text-sm font-medium text-blue-500 bg-[#d9e9ff] px-4 py-2 rounded-full w-full">
+            <p className="text-sm font-medium text-[#2a61a0] bg-[#d9e9ff] px-4 py-2 rounded-full w-fit inline-block">
               NYC’s #1 Code Violation Specialists
             </p>
             <h1 className="text-3xl md:text-4xl font-semibold text-gray-800 leading-snug">
@@ -85,7 +94,7 @@ export default function Home() {
               <Button onClick={() => router.push("/booking")} variant="primary" className="py-5 px-8 text-md hover:cursor-pointer transform hover:scale-105 hover:-translate-y-2 transition-all duration-400">
                 SCHEDULE FREE CONSULTATION
               </Button>
-              <Button variant="outline" className="py-1 hover:cursor-pointer">
+              <Button variant="outline" className="py-1 hover:cursor-pointer" onClick={scrollToSteps}>
                 HOW IT WORKS
               </Button>
             </div>
@@ -97,7 +106,7 @@ export default function Home() {
               alt="Construction Worker"
               width={500}
               height={400}
-              className="rounded-xl shadow-lg w-[90%] h-auto object-cover md:object-contain"
+              className="rounded-xl shadow-lg w-full h-auto object-cover md:object-contain"
             />
           </div>
         </div>
@@ -105,7 +114,7 @@ export default function Home() {
 
       {/* Stats Section */}
       <section className="bg-white px-6 md:px-12 py-10 text-white">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 text-center -my-24 bg-blue-600 rounded-2xl">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 text-center -my-24 bg-[#2a61a0] rounded-2xl">
           {[
             { value: "90%", label: "First Shot Filing Approval Rate" },
             { value: "24/7", label: "Expert Support From Our In-House Team" },
@@ -119,13 +128,13 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-white text-gray-950 my-15">
+      <section className="bg-white text-gray-950 my-20">
         {/* Our Expert Solutions */}
         <div className="max-w-7xl mx-auto px-4 py-16">
-          <h2 className="text-5xl font-semi-bold font-medium text-gray-800 mb-4 text-center">
+          <h2 className="text-3xl md:text-5xl font-semibold text-gray-900 mb-4 text-center">
             Our Expert Solutions
           </h2>
-          <p className="text-gray-600 text-lg mb-16 text-center">
+          <p className="text-gray-700 text-lg font-medium mb-16 text-center">
             We provide end-to-end services to resolve your building code
             violations and prevent future issues.
           </p>
@@ -155,20 +164,20 @@ export default function Home() {
             ].map((item, i) => (
               <div
                 key={i}
-                className="bg-white flex-col rounded shadow-xl shadow-gray-600 transform hover:scale-105 hover:-translate-y-4 transition-all duration-400"
+                className="bg-white flex-col rounded-xl shadow-xl shadow-gray-300 transform hover:scale-105 hover:-translate-y-4 transition-all duration-400"
               >
                 <Image
                   src={item.src}
                   alt="service Image"
                   width={500}
                   height={400}
-                  className="rounded-t-md shadow-lg object-cover"
+                  className="rounded-t-xl shadow-lg object-cover"
                 />
                 <div className="p-6 space-y-5">
                   <h3 className="text-2xl font-medium text-gray-800 mb-6">
                     {item.title}
                   </h3>
-                  <p className="text-sm md:text-[17px] text-gray-700 leading-loose">
+                  <p className="md:text-[15px] font-medium text-gray-600 leading-loose">
                     {item.desc}
                   </p>
                 </div>
@@ -180,37 +189,38 @@ export default function Home() {
         {/* The High Cost of NYC Building Violations */}
         <div className="bg-white py-30 px-4">
           <div className="max-w-7xl mx-auto">
-            <h3 className="text-2xl lg:text-4xl font-medium text-gray-95000 mb-4 text-center">
+            <h3 className="text-3xl md:text-5xl font-semibold text-gray-900 mb-4 text-center">
               The High Cost of NYC Building Violations
             </h3>
-            <p className="text-gray-600 font-medium mb-15 text-center">
+            <p className="text-gray-700 text-lg font-medium mb-16 text-center">
               Code violations in New York City don’t just mean fines, they can
               lead to serious legal and financial consequences.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
-                {
+                { icon: <FaDollarSign className="text-5xl text-[#2a61a0] mb-4" />,
                   title: "Costly Fines",
                   desc: "Building violations can result in fines averaging $10k–$25k per infraction, plus additional penalties for non-compliance.",
                 },
-                {
+                { icon: <MdWarning className="text-5xl text-[#2a61a0] mb-4" />,
                   title: "Legal Liability",
                   desc: "Unresolved violations lead to criminal charges, restricted operations, and lawsuits at tenant rights violations.",
                 },
-                {
+                { icon: <FaWallet className="text-5xl text-[#2a61a0] mb-4" />,
                   title: "Property Value Loss",
                   desc: "Outstanding code violations can lower property value by 10–15% and complicate future refinancing opportunities.",
                 },
               ].map((item, i) => (
                 <div
                   key={i}
-                  className="p-6 bg-white rounded-lg shadow-md shadow-gray-600 hover:shadow-3xl transform hover:-translate-y-2 transition-all duration-400"
+                  className="p-6 bg-white rounded-xl shadow-xl shadow-gray-300 hover:shadow-3xl transform hover:-translate-y-2 transition-all duration-400"
                 >
-                  <h4 className="text-gray-950 font-medium text-lg md:text-3xl mb-6">
+                  {item.icon}
+                  <h4 className="text-gray-950 font-medium text-xl md:text-2xl mb-6">
                     {item.title}
                   </h4>
-                  <p className="text-sm md:text-[15px] text-gray-600 font-medium leading-loose">{item.desc}</p>
+                  <p className="text-[15px] text-gray-600 font-medium leading-loose">{item.desc}</p>
                 </div>
               ))}
             </div>
@@ -218,12 +228,12 @@ export default function Home() {
         </div>
 
         {/* Our Simple 4-Step Process */}
-        <div className="bg-white py-16 px-4">
+        <div ref={stepRef} className="bg-white py-16 px-4">
           <div className="max-w-7xl mx-auto text-center">
-            <h3 className="text-3xl lg:text-5xl font-medium text-gray-950 mb-8">
+            <h3 className="text-3xl lg:text-5xl font-semibold text-gray-950 mb-8">
               Our Simple 4-Step Process
             </h3>
-            <p className="text-gray-800 font-medium mb-15">
+            <p className="text-gray-700 text-lg font-medium mb-15">
               We make resolving NYC building code violations straightforward and
               stress-free.
             </p>
@@ -255,13 +265,13 @@ export default function Home() {
                   key={i}
                   className="rounded-xl p-6 hover:shadow-2xl transition"
                 >
-                  <div className="w-18 h-18 mb-8 flex items-center justify-center text-white text-2xl font-bold rounded-full bg-blue-500 mx-auto">
+                  <div className="w-18 h-18 mb-8 flex items-center justify-center text-white text-2xl font-bold rounded-full bg-[#2a61a0] mx-auto">
                     {item.step}
                   </div>
-                  <h4 className="font-medium text-3xl text-gray-900 mb-8">
+                  <h4 className="font-medium text-2xl md:text-3xl text-gray-900 mb-8">
                     {item.title}
                   </h4>
-                  <p className="text-md text-gray-600 font-medium leading-loose">{item.desc}</p>
+                  <p className="text-[15px] text-gray-600 font-medium leading-loose">{item.desc}</p>
                 </div>
               ))}
             </div>
@@ -270,9 +280,9 @@ export default function Home() {
       </section>
       <section className="bg-white text-gray-900">
         {/* Testimonials */}
-        <div className="bg-blue-500 text-white py-16 px-4 text-center">
+        <div className="bg-[#2a61a0] text-white py-16 px-4 text-center">
           <h2 className="text-3xl lg:text-5xl font-medium mb-4">What Our Clients Say</h2>
-          <p className="mb-15">
+          <p className="mb-15 text-lg font-medium">
             Join hundreds of satisfied property owners who have saved thousands
             on violations.
           </p>
@@ -282,7 +292,7 @@ export default function Home() {
               {
                 Image: "/cheerful-guy-enjoying-outdoor-coffee-break-199x300.jpg",
                 quote:
-                  "Bexexpress saved me over $10,000 in potential fines by resolving my DOB violations quickly. Their expertise in navigating NYC’s complex building codes is unmatched.",
+                  "Bevex express saved me over $10,000 in potential fines by resolving my DOB violations quickly. Their expertise in navigating NYC’s complex building codes is unmatched.",
                 name: "Michael R.",
                 role: "Commercial Property Owner",
               },
@@ -303,13 +313,13 @@ export default function Home() {
             ].map((item, i) => (
               <div
                 key={i}
-                className="bg-blue-500 shadow text-white p-6 rounded-lg text-left "
+                className="shadow-xl text-white p-6 rounded-xl text-left "
               >
-                <p className="mb-4 text-xl leading-10">“{item.quote}”</p>
+                <p className="mb-4 text-[16px] leading-10">“{item.quote}”</p>
                 <div className="mt-4 flex items-center gap-2">
-                  <div className="w-14 h-14 rounded-full bg-white/30 flex items-center justify-center text-xs font-bold">
+                  <div className="w-16 aspect-square overflow-hidden rounded-full border-2 border-gray-300">
                     {/* {item.name[0]} */}
-                    <img src={item.Image} alt="client pic" className="rounded-full h-14 w-14" />
+                    <img src={item.Image} alt="client pic" className="w-full h-full object-cover" />
                   </div>
                   <div>
                     <p className="font-semibold text-md">{item.name}</p>
@@ -323,8 +333,8 @@ export default function Home() {
 
         {/* Why Choose Bexexpress */}
         <div className="py-10 mt-10 px-3 text-center">
-          <h3 className="text-3xl lg:text-5xl font-bold text-gray-900 mb-6">
-            Why Choose Bevex express?
+          <h3 className="text-3xl lg:text-5xl font-semibold text-gray-900 mb-6">
+            Why Choose BevEx express?
           </h3>
           <p className="text-gray-600 mb-12 text-[18px]">
             See the difference between handling NYC building violations on your
@@ -333,11 +343,14 @@ export default function Home() {
 
           <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Without Bexexpress */}
-            <div className=" bg-orange-50 flex flex-col gap-5 rounded-lg p-6 text-left shadow-gray-500 shadow-lg">
-              <h4 className="text-3xl font-semibold text-orange-600 mb-4">
-                Without Bevex Express
+            <div className="bg-blue-50 flex flex-col gap-5 rounded-lg p-6 text-left shadow-gray-300 shadow-xl">
+              <div className="flex items-center gap-4 mb-6">
+              <BsQuestionCircleFill  className="text-5xl text-orange-700" />
+              <h4 className="text-3xl font-semibold text-orange-700">
+                Without BevEx Express
               </h4>
-              <ul className="list-disc pl-10 space-y-2 text-gray-700 text-[16px]">
+              </div>
+              <ul className="list-disc pl-10 space-y-2 text-gray-700 text-[15px] font-medium leading-9">
                 <li>
                   Navigate complex NYC building codes alone with limited
                   expertise
@@ -360,11 +373,14 @@ export default function Home() {
             </div>
 
             {/* With Bexexpress */}
-            <div className="bg-blue-50 flex flex-col gap-5 rounded-lg p-6 text-left shadow-gray-500 shadow-lg">
-              <h4 className="text-3xl font-semibold text-blue-600 mb-4">
-                With Bevex Express
+            <div className="bg-blue-50 flex flex-col gap-5 rounded-lg p-6 text-left shadow-gray-300 shadow-xl">
+              <div className="flex items-center gap-4 mb-6">
+              <TiTick className="text-6xl text-[#2a61a0]"/>
+              <h4 className="text-3xl font-semibold text-[#2a61a0]">
+                With BevEx Express
               </h4>
-              <ul className="list-disc pl-10 space-y-2 text-gray-700 text-[16px]">
+              </div>
+              <ul className="list-disc pl-10 space-y-2 text-gray-700 text-[15px] font-medium leading-9">
                 <li>
                   Leverage 10+ years of specialized NYC building code experience
                 </li>
@@ -398,7 +414,7 @@ export default function Home() {
         </div>
 
         {/* CTA Banner */}
-        <div className="bg-blue-600 flex flex-col gap-10 text-white mx-4 md:mx-64 my-20 py-20 text-center px-6 md:px-16 rounded-lg shadow-lg">
+        <div className="bg-[#2a61a0] flex flex-col gap-10 text-white mx-4 md:mx-64 my-20 py-20 text-center px-6 md:px-16 rounded-lg shadow-lg">
           <h2 className="text-4xl md:text-5xl font-semibold">
             Stop Paying NYC Building Code Fines Today
           </h2>
@@ -407,12 +423,12 @@ export default function Home() {
             can resolve your violations quickly and cost-effectively.
           </p>
           <div className="flex flex-col md:flex-row gap-4 mb-4 justify-center items-center">
-            <button onClick={() => router.push("/booking")} className="bg-white text-blue-600 font-semibold py-4 px-2 md:px-8 outline-0  rounded-full transform hover:-translate-y-2 transition duration-300 hover:cursor-pointer">
+            <button onClick={() => router.push("/booking")} className="bg-white text-[#2a61a0] font-semibold py-4 px-4 md:px-8 outline-0  rounded-full transform hover:-translate-y-2 transition duration-300 hover:cursor-pointer">
               SCHEDULE FREE CONSULTATION
             </button>
             <a
               href="tel:+16464779876"
-              className="bg-blue-700 hover:bg-blue-800 transition py-4 px-6 rounded-full border-[0.1px] border-gray-300 text-white font-semibold"
+              className="transition py-4 px-6 rounded-full border border-gray-300 text-white font-semibold hover:text-[#2a61a0] hover:bg-white hover:border-[#2a61a0] transform hover:-translate-y-2 duration-300"
             // className="font-semibold text-white text-lg"c
             >
               CALL: +1-646-477-9876
@@ -438,7 +454,7 @@ export default function Home() {
             {/* Services */}
             <div className="mt-8 pl-7">
               <h4 className="font-semibold text-2xl  mb-6">Services</h4>
-              <ul className="text-md text-[#597b9c] space-y-3">
+              <ul className="text-md  text-[#255892] md:text-gray-100 space-y-3">
                 <li>Code Violation Resolution</li>
                 <li>Architectural Plans</li>
                 <li>Permit Filing</li>
@@ -452,8 +468,8 @@ export default function Home() {
               <ul className="text-md text-gray-300 space-y-3">
                 <li>WHO WE ARE</li>
                 <li>Pricing</li>
-                <li>Testimonials</li>
-                <li>Contact Us</li>
+                {/* <li>Testimonials</li> */}
+                {/* <li>Contact Us</li> */}
               </ul>
             </div>
 
@@ -462,13 +478,13 @@ export default function Home() {
               <h4 className="font-semibold text-2xl text-white mb-6">Contact</h4>
               <ul className="text-md text-gray-300 space-y-3">
                 <li>+1-646-477-9876</li>
-                <li>info@bexexpress.com</li>
+                <li>info@bevexexpress.com</li>
               </ul>
             </div>
           </div>
 
           <p className="text-center text-gray-500 text-sm mt-10">
-            © 2025 BevexExpress Architectural Services. All Rights Reserved.
+            © 2025 BevExExpress Architectural Services. All Rights Reserved.
           </p>
         </footer>
       </section>

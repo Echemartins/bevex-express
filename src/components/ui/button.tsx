@@ -28,11 +28,11 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 export function Button({ className, variant = "primary", ...props }: ButtonProps) {
-  const base = "text-md font-semibold transition-all duration-200 px-6 py-2 rounded-full";
+  const base = "text-sm md:font-md font-semibold transition-all duration-200 px-6 py-2 rounded-full";
   const variants = {
-    primary: "bg-blue-500 text-white hover:bg-blue-800",
+    primary: "bg-[#2a61a0] text-white hover:bg-[#1a4d7a]",
     orange: "bg-[#FF6B00] text-white hover:bg-[#e65f00]",
-    outline: "border border-[#0057B8] text-[#0057B8] hover:bg-[#e6f0fa]",
+    outline: "border border-[#2a61a0] text-[#2a61a0] hover:bg-[#e6f0fa]",
   };
 
   return (
