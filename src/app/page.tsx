@@ -76,7 +76,7 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="bg-[#d9e9ff83] px-6 md:px-12 pt-20 py-36">
+      <section className="bg-[#d9e9ff83] px-6 md:px-12 pt-10 md:pt-16 pb-36">
         <div className="max-w-7xl mx-auto flex flex-col-reverse lg:flex-row gap-12">
           <div className="lg:w-1/2 space-y-6">
             <p className="text-sm font-medium text-[#2a61a0] bg-[#d9e9ff] px-4 py-2 rounded-full w-fit inline-block">
