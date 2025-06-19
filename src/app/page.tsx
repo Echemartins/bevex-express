@@ -463,15 +463,15 @@ export default function Home() {
             </div>
 
             {/* Company */}
-            <div className="mt-8 pl-7">
+            {/* <div className="mt-8 pl-7">
               <h4 className="font-semibold text-2xl text-white mb-6">Company</h4>
               <ul className="text-md text-gray-300 space-y-3">
                 <li>WHO WE ARE</li>
                 <li>Pricing</li>
-                {/* <li>Testimonials</li> */}
-                {/* <li>Contact Us</li> */}
+                <li>Testimonials</li>
+                <li>Contact Us</li>
               </ul>
-            </div>
+            </div> */}
 
             {/* Contact */}
             <div className="mt-8">
