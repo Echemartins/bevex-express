@@ -292,21 +292,21 @@ export default function Home() {
               {
                 Image: "/cheerful-guy-enjoying-outdoor-coffee-break-199x300.jpg",
                 quote:
-                  "Bevex express saved me over $10,000 in potential fines by resolving my DOB violations quickly. Their expertise in navigating NYC’s complex building codes is unmatched.",
+                  "BevEx express saved me over $10,000 in potential fines by resolving my DOB violations quickly. Their expertise in navigating NYC’s complex building codes is unmatched.",
                 name: "Michael R.",
                 role: "Commercial Property Owner",
               },
               {
                 Image: "/young-african-woman-white-suit-using-phone-scaled.jpg",
                 quote:
-                  "After receiving multiple violations that threatened to shut down my restaurant, Bexexpress stepped in and resolved everything in weeks. Their team handled all the paperwork and meetings.",
+                  "After receiving multiple violations that threatened to shut down my restaurant, BevEx express stepped in and resolved everything in weeks. Their team handled all the paperwork and meetings.",
                 name: "Sarah D.",
                 role: "Restaurant Owner",
               },
               {
                 Image: "/medium-shot-man-wearing-glasses-scaled.jpg.jpg",
                 quote:
-                  "As a property manager handling multiple buildings, I rely on Bexexpress to keep us compliant. Their proactive approach has prevented countless violations and saved our company millions.",
+                  "As a property manager handling multiple buildings, I rely on Bevex express to keep us compliant. Their proactive approach has prevented countless violations and saved our company millions.",
                 name: "Daniel T.",
                 role: "Property Management Firm",
               },
@@ -414,7 +414,7 @@ export default function Home() {
         </div>
 
         {/* CTA Banner */}
-        <div className="bg-[#2a61a0] flex flex-col gap-10 text-white mx-4 md:mx-64 my-20 py-20 text-center px-6 md:px-16 rounded-lg shadow-lg">
+        <div className="bg-[#2a61a0] flex flex-col gap-10 text-white mx-4 lg:mx-64 my-20 py-20 text-center px-6 md:px-16 rounded-lg shadow-lg">
           <h2 className="text-4xl md:text-5xl font-semibold">
             Stop Paying NYC Building Code Fines Today
           </h2>
@@ -438,7 +438,7 @@ export default function Home() {
 
         {/* Footer */}
         <footer className="bg-gray-900 text-white py-12 px-4">
-          <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-4 gap-8">
+          <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Logo and desc */}
             <div>
               <div className="">
@@ -452,7 +452,7 @@ export default function Home() {
             </div>
 
             {/* Services */}
-            <div className="mt-8 pl-7">
+            <div className="mt-8 pl-7 lg:pl-24">
               <h4 className="font-semibold text-2xl  mb-6">Services</h4>
               <ul className="text-md  text-[#255892] md:text-gray-100 space-y-3">
                 <li>Code Violation Resolution</li>
@@ -474,7 +474,7 @@ export default function Home() {
             </div> */}
 
             {/* Contact */}
-            <div className="mt-8">
+            <div className="mt-8 lg:pl-20">
               <h4 className="font-semibold text-2xl text-white mb-6">Contact</h4>
               <ul className="text-md text-gray-300 space-y-3">
                 <li>+1-646-477-9876</li>

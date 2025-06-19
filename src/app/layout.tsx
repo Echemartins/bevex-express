@@ -1,4 +1,4 @@
-import type { Metadata } from "next"; 
+import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -14,19 +14,19 @@ const geistMono = Geist_Mono({
 
 
 
-  // export const metadata = {
-  //   title: "BevEX Express",
-  //   description: "Fast DOB Violation Booking",
-  //   icons: {
-  //     icon: "/WhatsApp_Image_2025-04-18_at_13.18.34_c36a8747-removebg-preview-200x200.png.png",
-  //   },
-  // };
+// export const metadata = {
+//   title: "BevEX Express",
+//   description: "Fast DOB Violation Booking",
+//   icons: {
+//     icon: "/WhatsApp_Image_2025-04-18_at_13.18.34_c36a8747-removebg-preview-200x200.png.png",
+//   },
+// };
 ;
 export const metadata: Metadata = {
   title: "BevEX Express | DOB Violation Help",
   description: "We help you convert DOB violation notices into booked calls—fast, easy, and reliable. Get help today with BevEX Express.",
   icons: {
-    icon: "/WhatsApp_Image_2025-04-18_at_13.18.34_c36a8747-removebg-preview-200x200.png.png",
+    icon: "/bevex_logo.svg.ico",
   },
   keywords: "DOB violation, NYC building violation, violation help, BevEX Express",
   openGraph: {
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     siteName: "BevEX Express",
     images: [
       {
-        url: "/WhatsApp_Image_2025-04-18_at_13.18.34_c36a8747-removebg-preview-200x200.png.png",
+        url: "/WhatsApp_Image_2025-04-18_at_13.18.34_c36a8747-removebg-preview-200x200.png",
         width: 1200,
         height: 630,
         alt: "BevEX Express - Resolve DOB violations",
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "BevEX Express",
     description: "Convert DOB violations into booked calls.",
-    images: ["/WhatsApp_Image_2025-04-18_at_13.18.34_c36a8747-removebg-preview-200x200.png.png"],
+    images: ["/WhatsApp_Image_2025-04-18_at_13.18.34_c36a8747-removebg-preview-200x200.png"],
   },
 };
 
@@ -62,6 +62,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link className="bg-cover" rel="icon" href="/bevex_logo.svg.ico" type="image/png" />
+      </head> 
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
