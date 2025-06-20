@@ -5,15 +5,15 @@ import Image from "next/image";
 import { Button } from "../components/ui/button";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import {TiTick} from "react-icons/ti";
+import { TiTick } from "react-icons/ti";
 import { BsQuestionCircleFill } from "react-icons/bs";
 import { FaDollarSign, FaWallet } from "react-icons/fa";
-import { MdWarning} from "react-icons/md";
+import { MdWarning } from "react-icons/md";
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const router = useRouter();
-    const stepRef = useRef<HTMLDivElement>(null);
+  const stepRef = useRef<HTMLDivElement>(null);
 
   const scrollToSteps = () => {
     stepRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -199,15 +199,18 @@ export default function Home() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
-                { icon: <FaDollarSign className="text-5xl text-[#2a61a0] mb-4" />,
+                {
+                  icon: <FaDollarSign className="text-5xl text-[#2a61a0] mb-4" />,
                   title: "Costly Fines",
                   desc: "Building violations can result in fines averaging $10k–$25k per infraction, plus additional penalties for non-compliance.",
                 },
-                { icon: <MdWarning className="text-5xl text-[#2a61a0] mb-4" />,
+                {
+                  icon: <MdWarning className="text-5xl text-[#2a61a0] mb-4" />,
                   title: "Legal Liability",
                   desc: "Unresolved violations lead to criminal charges, restricted operations, and lawsuits at tenant rights violations.",
                 },
-                { icon: <FaWallet className="text-5xl text-[#2a61a0] mb-4" />,
+                {
+                  icon: <FaWallet className="text-5xl text-[#2a61a0] mb-4" />,
                   title: "Property Value Loss",
                   desc: "Outstanding code violations can lower property value by 10–15% and complicate future refinancing opportunities.",
                 },
@@ -345,10 +348,10 @@ export default function Home() {
             {/* Without Bexexpress */}
             <div className="bg-blue-50 flex flex-col gap-5 rounded-lg p-6 text-left shadow-gray-300 shadow-xl">
               <div className="flex items-center gap-4 mb-6">
-              <BsQuestionCircleFill  className="text-5xl text-orange-700" />
-              <h4 className="text-3xl font-semibold text-orange-700">
-                Without BevEx Express
-              </h4>
+                <BsQuestionCircleFill className="text-5xl text-orange-700" />
+                <h4 className="text-3xl font-semibold text-orange-700">
+                  Without BevEx Express
+                </h4>
               </div>
               <ul className="list-disc pl-10 space-y-2 text-gray-700 text-[15px] font-medium leading-9">
                 <li>
@@ -375,10 +378,10 @@ export default function Home() {
             {/* With Bexexpress */}
             <div className="bg-blue-50 flex flex-col gap-5 rounded-lg p-6 text-left shadow-gray-300 shadow-xl">
               <div className="flex items-center gap-4 mb-6">
-              <TiTick className="text-6xl text-[#2a61a0]"/>
-              <h4 className="text-3xl font-semibold text-[#2a61a0]">
-                With BevEx Express
-              </h4>
+                <TiTick className="text-6xl text-[#2a61a0]" />
+                <h4 className="text-3xl font-semibold text-[#2a61a0]">
+                  With BevEx Express
+                </h4>
               </div>
               <ul className="list-disc pl-10 space-y-2 text-gray-700 text-[15px] font-medium leading-9">
                 <li>
@@ -439,22 +442,42 @@ export default function Home() {
         {/* Footer */}
         <footer className="bg-gray-900 text-white py-12 px-4">
           <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Logo and desc */}
+            {/* Logo and Description */}
             <div>
-              <div className="">
-                {/* Bev<span className="text-white">EX</span> */}
-                <Image width={120} height={120} src="/WhatsApp_Image_2025-04-18_at_13.18.34_c36a8747-removebg-preview-200x200.png.png" alt="LOGO" />
+              <div>
+                <Image
+                  width={120}
+                  height={120}
+                  src="/WhatsApp_Image_2025-04-18_at_13.18.34_c36a8747-removebg-preview-200x200.png.png"
+                  alt="LOGO"
+                />
               </div>
               <p className="text-md mt-2 text-gray-300">
-                New York City building violation resolution experts providing
-                fast, reliable, and affordable compliance solutions.
+                New York City building violation resolution experts providing fast, reliable, and affordable compliance solutions.
               </p>
+              {/* <div className="flex gap-4 mt-4">
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                  <svg className="w-6 h-6 fill-current text-white hover:text-blue-500" viewBox="0 0 24 24">
+                    <path d="M22 12a10 10 0 1 0-11.5 9.9v-7h-2v-3h2v-2c0-2 1.2-3.1 3-3.1.9 0 1.8.2 1.8.2v2h-1c-1 0-1.3.6-1.3 1.2v1.7h2.3l-.4 3h-1.9v7A10 10 0 0 0 22 12Z" />
+                  </svg>
+                </a>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                  <svg className="w-6 h-6 fill-current text-white hover:text-pink-400" viewBox="0 0 24 24">
+                    <path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.9.3 2.4.6.6.3 1 .7 1.5 1.5.3.5.5 1.2.6 2.4.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.9-.6 2.4-.3.6-.7 1-1.5 1.5-.5.3-1.2.5-2.4.6-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.9-.3-2.4-.6-.6-.3-1-.7-1.5-1.5-.3-.5-.5-1.2-.6-2.4C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-1.9.6-2.4.3-.6.7-1 1.5-1.5.5-.3 1.2-.5 2.4-.6C8.4 2.2 8.8 2.2 12 2.2m0-2.2C8.7 0 8.3 0 7 .1 5.7.1 4.6.4 3.7.9 2.7 1.4 1.9 2.2 1.4 3.2c-.5.9-.8 2-1 3.3C.1 8.3 0 8.7 0 12s.1 3.7.2 5c.1 1.3.4 2.4 1 3.3.5 1 1.3 1.8 2.3 2.3.9.5 2 1 3.3 1.1 1.3.1 1.7.2 5 .2s3.7 0 5-.2c1.3-.1 2.4-.4 3.3-1 1-.5 1.8-1.3 2.3-2.3.5-.9 1-2 1.1-3.3.1-1.3.2-1.7.2-5s0-3.7-.2-5c-.1-1.3-.4-2.4-1-3.3-.5-1-1.3-1.8-2.3-2.3-.9-.5-2-1-3.3-1.1C15.7.1 15.3 0 12 0zm0 5.8A6.2 6.2 0 1 0 18.2 12 6.2 6.2 0 0 0 12 5.8Zm0 10.2A4 4 0 1 1 16 12a4 4 0 0 1-4 4Zm6.4-10.7a1.44 1.44 0 1 1-1.44-1.44A1.44 1.44 0 0 1 18.4 5.3Z" />
+                  </svg>
+                </a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                  <svg className="w-6 h-6 fill-current text-white hover:text-blue-300" viewBox="0 0 24 24">
+                    <path d="M19 0h-14c-2.8 0-5 2.2-5 5v14c0 2.7 2.2 5 5 5h14c2.8 0 5-2.3 5-5v-14c0-2.8-2.2-5-5-5zm-11.5 19h-3v-10h3v10zm-1.5-11.3c-1 0-1.8-.8-1.8-1.7s.8-1.8 1.7-1.8c1 0 1.8.8 1.8 1.8s-.8 1.7-1.7 1.7zm13 11.3h-3v-5.5c0-1.4-.5-2.3-1.8-2.3-1 0-1.5.7-1.7 1.3-.1.2-.1.5-.1.8v5.7h-3s.1-9.2 0-10h3v1.4c.4-.7 1.2-1.7 2.9-1.7 2.1 0 3.7 1.4 3.7 4.3v6z" />
+                  </svg>
+                </a>
+              </div> */}
             </div>
 
             {/* Services */}
             <div className="mt-8 pl-7 lg:pl-24">
-              <h4 className="font-semibold text-2xl  mb-6">Services</h4>
-              <ul className="text-md  text-[#255892] md:text-gray-100 space-y-3">
+              <h4 className="font-semibold text-2xl mb-6">Services</h4>
+              <ul className="text-md text-[#255892] md:text-gray-100 space-y-3">
                 <li>Code Violation Resolution</li>
                 <li>Architectural Plans</li>
                 <li>Permit Filing</li>
@@ -462,24 +485,27 @@ export default function Home() {
               </ul>
             </div>
 
-            {/* Company */}
-            {/* <div className="mt-8 pl-7">
-              <h4 className="font-semibold text-2xl text-white mb-6">Company</h4>
-              <ul className="text-md text-gray-300 space-y-3">
-                <li>WHO WE ARE</li>
-                <li>Pricing</li>
-                <li>Testimonials</li>
-                <li>Contact Us</li>
-              </ul>
-            </div> */}
-
-            {/* Contact */}
+            {/* Contact Info */}
             <div className="mt-8 lg:pl-20">
               <h4 className="font-semibold text-2xl text-white mb-6">Contact</h4>
               <ul className="text-md text-gray-300 space-y-3">
-                <li>+1-646-477-9876</li>
-                <li>info@bevexexpress.com</li>
+                <li>
+                  <a href="tel:+16464779876" className="hover:underline">
+                    +1-646-477-9876
+                  </a>
+                </li>
+                <li>
+                  <a href="tel:+18442383977" className="hover:underline">
+                    Toll Free: 1 (844) 238-3977 [1(844)BevEx77]
+                  </a>
+                </li>
+                <li>
+                  <a href="mailto:info@bevexexpress.com" className="hover:underline">
+                    info@bevexexpress.com
+                  </a>
+                </li>
               </ul>
+
             </div>
           </div>
 
