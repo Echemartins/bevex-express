@@ -430,11 +430,11 @@ export default function Home() {
               SCHEDULE FREE CONSULTATION
             </button>
             <a
-              href="tel:+16464779876"
+              href="tel:(646) 770-0796"
               className="transition py-4 px-6 rounded-full border border-gray-300 text-white font-semibold hover:text-[#2a61a0] hover:bg-white hover:border-[#2a61a0] transform hover:-translate-y-2 duration-300"
             // className="font-semibold text-white text-lg"c
             >
-              CALL: +1-646-477-9876
+              CALL: (646) 770-0796
             </a>
           </div>
         </div>
