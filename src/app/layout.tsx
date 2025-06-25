@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
+// Load Google Fonts
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -12,23 +13,17 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-
-
-// export const metadata = {
-//   title: "BevEX Express",
-//   description: "Fast DOB Violation Booking",
-//   icons: {
-//     icon: "/WhatsApp_Image_2025-04-18_at_13.18.34_c36a8747-removebg-preview-200x200.png.png",
-//   },
-// };
-;
+// ✅ Complete Metadata Configuration
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.bevexexpress.com"), // Set for resolving image URLs
   title: "BevEX Express | DOB Violation Help",
-  description: "We help you convert DOB violation notices into booked calls—fast, easy, and reliable. Get help today with BevEX Express.",
+  description:
+    "We help you convert DOB violation notices into booked calls—fast, easy, and reliable. Get help today with BevEX Express.",
   icons: {
-    icon: "/bevex_logo.svg.ico",
+    icon: "/bevex_logo.svg.ico", // Make sure this file exists in /public
   },
-  keywords: "DOB violation, NYC building violation, violation help, BevEX Express",
+  keywords:
+    "DOB violation, NYC building violation, violation help, BevEX Express",
   openGraph: {
     title: "BevEX Express",
     description: "Helping you resolve DOB violations fast.",
@@ -36,7 +31,7 @@ export const metadata: Metadata = {
     siteName: "BevEX Express",
     images: [
       {
-        url: "/WhatsApp_Image_2025-04-18_at_13.18.34_c36a8747-removebg-preview-200x200.png",
+        url: "/bevex_logo.svg.ico",
         width: 1200,
         height: 630,
         alt: "BevEX Express - Resolve DOB violations",
@@ -49,27 +44,21 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "BevEX Express",
     description: "Convert DOB violations into booked calls.",
-    images: ["/WhatsApp_Image_2025-04-18_at_13.18.34_c36a8747-removebg-preview-200x200.png"],
+    images: [
+      "/bevex_logo.svg.ico",
+    ],
   },
 };
 
-
-
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en">
-      <head>
-        <link className="bg-cover" rel="icon" href="/bevex_logo.svg.ico" type="image/png" />
-      </head> 
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
+      <head />
+      <body className="antialiased">{children}</body>
     </html>
   );
 }

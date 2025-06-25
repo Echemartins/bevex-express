@@ -491,7 +491,7 @@ export default function Home() {
               <ul className="text-md text-gray-300 space-y-3">
                 <li>
                   <a href="tel:+16464779876" className="hover:underline">
-                    +1-646-477-9876
+                    (646) 770-0796
                   </a>
                 </li>
                 <li>
