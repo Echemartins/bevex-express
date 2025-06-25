@@ -13,14 +13,14 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// ✅ Complete Metadata Configuration
+// ✅ Metadata Configuration
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.bevexexpress.com"), // Set for resolving image URLs
+  metadataBase: new URL("https://www.bevexexpress.com"),
   title: "BevEX Express | DOB Violation Help",
   description:
     "We help you convert DOB violation notices into booked calls—fast, easy, and reliable. Get help today with BevEX Express.",
   icons: {
-    icon: "/bevex_logo.svg.ico", // Make sure this file exists in /public
+    icon: "image2vector.svg",
   },
   keywords:
     "DOB violation, NYC building violation, violation help, BevEX Express",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     siteName: "BevEX Express",
     images: [
       {
-        url: "/bevex_logo.svg.ico",
+        url: "/WhatsApp_Image_2025-04-18_at_13.18.34_c36a8747-removebg-preview-200x200.png.png",
         width: 1200,
         height: 630,
         alt: "BevEX Express - Resolve DOB violations",
@@ -44,20 +44,23 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "BevEX Express",
     description: "Convert DOB violations into booked calls.",
-    images: [
-      "/bevex_logo.svg.ico",
-    ],
+    images: ["/WhatsApp_Image_2025-04-18_at_13.18.34_c36a8747-removebg-preview-200x200.png.png"],
   },
 };
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode;  
 }) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
-      <head />
+      <head>
+        {/* <link rel="icon" href="/bevexlogo.svg.svg" sizes="any" />
+        <link rel="icon" type="image/svg+xml" href="/bevex_logo.svg" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <meta name="theme-color" content="#ffffff" /> */}
+      </head>
       <body className="antialiased">{children}</body>
     </html>
   );
